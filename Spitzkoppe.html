@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Dominus Dune Tours Logo.png" type="image/x-icon">
+  <title>Spitzkoppe Tour</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, rgba(199, 144, 204, 0.822), rgb(102, 84, 165), rgb(114, 48, 190));
+    }
+
+    h1 {
+      color: rgb(78, 1, 59);
+      font-size: clamp(1.8rem, 2.5vw, 22.5vw);
+      text-align: center;
+      font-family: Amita;
+      padding-top: 20px;
+      margin: 0;
+    }
+
+    .backbtn {
+      display: block;
+      float: left;
+      margin-left: 10px;
+      padding: 8px 16px;
+      background-color: #c7c7c7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(to bottom, rgb(134, 99, 99), rgb(161, 70, 70));
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .title-info {
+      padding: 15% 10% 15% 10%;
+    }
+
+    .background {
+      background: url('Photos/spitzkoppe_background.jpg') center center/cover no-repeat;
+      padding-bottom: 20px;
+    }
+
+    .image {
+      max-width: 80%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .reasons {
+      margin-bottom: 20px;
+      line-height: 30px;
+    }
+
+    .reasons ul {
+      list-style-type: "=";
+      margin-left: 20px;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #customAlert {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #c0674c;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      animation: fadeInOut 2s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      10%,
+      90% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <img src="Dominus Dune Tours Logo.png" id="logo" alt="Dominus Logo" class="action" width="100px" height="100" />
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn"><img src="Photos/jeep_5262039.png" width="20px"> Tours
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="Sandwich _harbour.html">Sandwich Harbor</a>
+            <a href="Moonvalley.html">Moonvalley</a>
+            <a href="Spitzkoppe.html">Spitzkoppe</a>
+            <a href="Langstrand_dune_excursion.html">Langstrand</a>
+            <a href="Dune_board_tour.html">Dune Boarding</a>
+          </div>
+        </div>
+         
+        <div class="dropdown">
+          <button class="dropbtn"><img src="Photos/picture_7596772.png" width="20px"> Gallery
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="Sandwich _harbour.html">Sandwich Harbor</a>
+            <a href="Moonvalley.html">Moonvalley</a>
+            <a href="Spitzkoppe.html">Spitzkoppe</a>
+            <a href="Langstrand_expedition.html">Langstrand</a>
+            <a href="Dune_board_tour.html">Dune Boarding</a>
+          </div>
+        </div>
+    <a href="#" id="contact-us-link"><img src="Photos/contact-us_6766388.png" width="20px"> Contact Us</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  <!-- Popup container -->
+  <div class="popup-overlay" id="contact-popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <h3>Bookings:</h3>
+      <p>Business Name: Dominus Dune Tours</p>
+      <p>Phone Number: +264 81 633 5151</p>
+      <h3>More information follow us at:</h3>
+      <ul class="social-icons">
+        <a href="https://www.facebook.com/share/VUa9AeseEsPEuhJH/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
+          <img src="facebook.png" alt="Facebook" width="20">
+        </a>
+        <a href="https://www.instagram.com/johannestruter/" target="_blank" rel="noopener noreferrer">
+          <img src="instagram.png" alt="Instagram" width="20">
+        </a>
+        <a href="https://www.youtube.com/@DominusDuneDrivingSchool" target="_blank" rel="noopener noreferrer">
+          <img src="youtube.png" alt="YouTube" width="20">
+        </a>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="background">
+    <!-- Header Section -->
+    <h1>Spitzkoppe Tour</h1>
+
+    <!-- Main Content Section -->
+    <p class="title-info">Come and experience the mighty Spitzkoppe towering over the surrounding landscapes. Nicknamed the Matterhorn of Africa because of its sharp peak, Spitzkoppe also hides a lot of history. As you ascend the mountain, a local guide will share interesting stories while showing you ancient rock drawings from the tribes who once called Spitzkoppe their home. Further, you can enjoy the breathtaking views and the freedom that Spitzkoppe offers!</p>
+  </div>
+
+  <div class="reasons">
+    <h2>What the tour offers:</h2>
+    <ul>
+      <li>Half Day Tour (+-5 Hours)</li>
+      <li>Located 40km East of Swakopmund</li>
+      <li>Drive to Viewpoint</li>
+      <li>See Lichen field</li>
+      <li>Look at rock formations and plants</li>
+      <li>See Welwitschia (oldest plant in the world)</li>
+      <li>See the musical rocks</li>
+      <li>Have a nice lunch</li>
+    </ul>
+
+    <h2>Combination Tours</h2>
+    <ul>
+      <li>Full Day Spitzkoppe/Moonvalley</li>
+    </ul>
+  </div>
+
+  <div class="contact-info">
+    <p>For more information and reservations, contact us via WhatsApp at <b id="phoneNumber" style="cursor: pointer; color: blue;">+264 81 633 5151</b>.</p>
+  </div>
+  <div id="customAlert"></div>
+  
+  <div>
+    <h2 id="gallery">Gallery</h2>
+    <div class="containerimg">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0024 (002).jpg" alt="Spitzkoppe Tour 1" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0025 (002).jpg" alt="Spitzkoppe Tour 1" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0037 (002).jpg" alt="Spitzkoppe Tour 1" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0038 (002).jpg" alt="Spitzkoppe Tour 1" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0039 (002).jpg" alt="Spitzkoppe Tour 2" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0040 (002).jpg" alt="Spitzkoppe Tour 3" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0041 (002).jpg" alt="Spitzkoppe Tour 4" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0045 (002).jpg" alt="Spitzkoppe Tour 8" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0046 (002).jpg" alt="Spitzkoppe Tour 9" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0047 (002).jpg" alt="Spitzkoppe Tour 10" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0048 (002).jpg" alt="Spitzkoppe Tour 11" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0049 (002).jpg" alt="Spitzkoppe Tour 12" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0050 (002).jpg" alt="Spitzkoppe Tour 13" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0052 (002).jpg" alt="Spitzkoppe Tour 15" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0053 (002).jpg" alt="Spitzkoppe Tour 16" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0054 (002).jpg" alt="Spitzkoppe Tour 17" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0055 (002).jpg" alt="Spitzkoppe Tour 18" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0056 (002).jpg" alt="Spitzkoppe Tour 19" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0057 (002).jpg" alt="Spitzkoppe Tour 20" class="img">
+        <img src="Photos/spitzkoppe/IMG-20240419-WA0058 (002).jpg" alt="Spitzkoppe Tour 21" class="img">
+    </div>
+</div>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <h6>Tours</h6>
+            <ul>
+              <li>Sandwich Harbor</li>
+              <li>Moonvalley</li>
+              <li>Spitzkoppe</li>
+              <li>Langstrand</li>
+              <li>Dune Boarding</li>
+            </ul>
+          </div>
+
+          <div>
+            <h6>Follow us </h6>
+            <ul class="social-icons">
+              <a href="https://www.facebook.com/share/VUa9AeseEsPEuhJH/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
+                <img src="facebook.png" alt="Facebook" width="20">
+              </a>
+              <a href="https://www.instagram.com/johannestruter/" target="_blank" rel="noopener noreferrer">
+                <img src="instagram.png" alt="Instagram" width="20">
+              </a>
+              <a href="https://www.youtube.com/@DominusDuneDrivingSchool" target="_blank" rel="noopener noreferrer">
+                <img src="youtube.png" alt="YouTube" width="20">
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('phoneNumber').onclick = function() {
+        showAlert('WhatsApp Number Copied: +264 81 633 5151');
+      };
+
+      function showAlert(message) {
+        var alertBox = document.getElementById('customAlert');
+        alertBox.innerText = message;
+        alertBox.style.display = 'block';
+        setTimeout(() => {
+          alertBox.style.display = 'none';
+        }, 2000);
+      }
+
+      function closePopup() {
+        document.getElementById('contact-popup').style.display = 'none';
+      }
+
+      document.getElementById('contact-us-link').onclick = function() {
+        document.getElementById('contact-popup').style.display = 'block';
+      };
+
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+  </div>
+</body>
+
+</html>

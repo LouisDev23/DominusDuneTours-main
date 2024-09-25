@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Dominus Dune Tours Logo.png" type="image/x-icon">
+    <title>Dune Boarding</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Styles */
+        body {
+    margin: 0;
+    padding: 0;
+    background-image: url("Photos/_82290bbc-9c3d-4bf4-8077-11368ea1d28f.jpg");
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f7f7f7;
+    position: relative; /* Needed for the overlay */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+    z-index: -1; /* Make sure the overlay is behind the text */
+}
+
+        h1 {
+            color: rgb(82, 8, 143);
+            margin: 20px auto;
+            width: 450px;
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            text-align: center;
+            font-family: Amita;
+        }
+
+        .backbtn {
+            display: block;
+            float: left;
+            margin-left: 10px;
+            padding: 8px 16px;
+            background-color: #c7c7c7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        header {
+            background: linear-gradient(to bottom, rgb(134, 99, 99), rgb(161, 70, 70));
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .title-info {
+            padding: 15% 10%;
+        }
+
+        .background {
+            background: url('Photos/dune_boarding_background.jpg') center center/cover no-repeat; /* Adjust the image path */
+            padding-bottom: 20px;
+        }
+
+        .image {
+            max-width: 80%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .reasons {
+            margin-bottom: 20px;
+            line-height: 30px;
+        }
+
+        .reasons ul {
+            list-style-type: "=";
+            margin-left: 20px;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #customAlert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #c0674c;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            animation: fadeInOut 2s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0%,
+            100% {
+                opacity: 0;
+            }
+            10%,
+            90% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <img src="Dominus Dune Tours Logo.png" id="logo" alt="Dominus Logo" class="action" width="100px" height="100" />
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><img src="Photos/jeep_5262039.png" width="20px"> Tours
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Sandwich _harbour.html">Sandwich Harbor</a>
+                <a href="Sandwich self drive.html">Sandwich Harbor self drive</a>
+                <a href="Moonvalley.html">Moonvalley</a>
+                <a href="Spitzkoppe.html">Spitzkoppe</a>
+                <a href="Langstrand_dune_excursion.html">Langstrand</a>
+                <a href="Dune_board_tour.html">Dune Boarding</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><img src="Photos/picture_7596772.png" width="20px"> Gallery
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Sandwich_harbour.html">Sandwich Harbor</a>
+                <a href="Sandwich self drive.html">Sandwich Harbor self drive</a>
+                <a href="Moonvalley.html">Moonvalley</a>
+                <a href="Spitzkoppe.html">Spitzkoppe</a>
+                <a href="Langstrand_dune_excursion.html">Langstrand</a>
+                <a href="Dune_board_tour.html">Dune Boarding</a>
+            </div>
+        </div>
+        <a href="#" id="contact-us-link"><img src="Photos/contact-us_6766388.png" width="20px"> Contact Us</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <h1 class="head">Dune Boarding</h1>
+    <div class="background">
+        <p class="title-info">Surfing and Boogie Boarding, let's do it in the desert; the water is too cold anyways! Join us for Dune Boarding, where we accommodate children, letting them slide down small safe dunes, while adrenaline junkies are taken out to some of the biggest dunes in the Namib. We will provide you with expert guides, so come on, let's have some fun!</p>
+
+        <div class="reasons">
+            <h2>What the Tour Offers:</h2>
+            <ul>
+                <li>Short Tour (+-2 Hours)</li>
+                <li>In the Langstrand Dune Belt Between Swakopmund and Walvis Bay</li>
+                <li>Short Drive to Sliding Dune</li>
+                <li>Dune Boarding Experience</li>
+                <li>Small Picnic in Dunes</li>
+                <li>Food and Drinks Included</li>
+            </ul>
+        </div>
+
+        <div class="contact-info">
+            <p>For more information and reservations, contact us via WhatsApp at <b id="phoneNumber" style="cursor: pointer; color: blue;">+264 81 633 5151</b>.</p>
+        </div>
+        <div id="customAlert"></div>
+    </div>
+
+    <h2 id="gallery">Adventure in the dunes</h2>
+    <div class="containerimg">
+        <!-- Add images relevant to the Dune Boarding Tour -->
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <h6>Tours</h6>
+                    <ul>
+                        <li>Sandwich Harbor</li>
+                        <li>Sandwich Harbor Self-Drive</li>
+                        <li>Moonvalley/Welwitchia Tour</li>
+                        <li>Spitzkoppe</li>
+                        <li>Dune Board Tour</li>
+                        <li>Langstrand Dune Expedition</li>
+                        <li>Langstrand Dune Sundowner</li>
+                        <li>Special Requests</li>
+                    </ul>
+                </div>
+                <div>
+                    <h6>Follow us</h6>
+                    <ul class="social-icons">
+                        <a href="https://www.facebook.com/share/VUa9AeseEsPEuhJH/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer"><img src="facebook.png" alt="Facebook" width="20"></a>
+                        <a href="https://www.instagram.com/johannestruter/" target="_blank" rel="noopener noreferrer"><img src="instagram.png" alt="Instagram" width="20"></a>
+                        <a href="https://www.youtube.com/@DominusDuneDrivingSchool" target="_blank" rel="noopener noreferrer"><img src="youtube.png" alt="YouTube" width="20"></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-12">
+            <p>&copy; 2024 Dominus Dune Driving. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('phoneNumber').addEventListener('click', function () {
+            var phoneNumber = this.innerText.trim();
+            copyToClipboard(phoneNumber);
+        });
+
+        function copyToClipboard(text) {
+            var textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showCustomAlert('Phone number copied to clipboard: ' + text);
+        }
+
+        function showCustomAlert(message) {
+            var customAlert = document.getElementById('customAlert');
+            customAlert.textContent = message;
+            customAlert.style.display = 'block';
+            setTimeout(function () {
+                customAlert.style.display = 'none';
+            }, 1999);
+        }
+    </script>
+</body>
+
+</html>

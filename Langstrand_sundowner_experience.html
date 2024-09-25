@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Reviews Container */
+        #reviews {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Individual Review Styles */
+        .review {
+            margin-bottom: 15px;
+            padding: 15px;
+            border-left: 5px solid #4a90e2;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            transition: transform 0.2s;
+        }
+
+        .review:hover {
+            transform: scale(1.02);
+        }
+
+        .review strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #4a90e2;
+        }
+
+        .review em {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .no-reviews {
+            text-align: center;
+            color: #888;
+        }
+
+        /* Error message */
+        .error-message {
+            text-align: center;
+            color: #d9534f; /* Bootstrap danger color */
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none; 
+            position: fixed; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #d9534f; /* Bootstrap danger color */
+            font-size: 1.2em;
+        }
+
+        /* Button Styles */
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .open-popup {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .open-popup:hover {
+            background-color: #007bb5;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User Reviews</h1>
+    <button class="open-popup" id="openPopup">Submit a Review</button>
+    
+    <div id="reviews">Loading reviews...</div>
+
+    <!-- Popup for Google Form -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <h2>Submit Your Review</h2>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZ43FJ0B3E3gGHEVchCFqb9GfZud0cTewlWd04JtJwHdN4HQ/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to fetch and display reviews
+        fetch('https://script.google.com/macros/s/AKfycbzSW2GVFDw43MKutZR5JuRCgfcXqXNFFO3o6nEfC-4hLC1ZY1OUiSqsWLi5T55K1cD1ng/exec') // Replace with your web app URL
+            .then(response => response.json())
+            .then(data => {
+                const reviewsContainer = document.getElementById('reviews');
+                reviewsContainer.innerHTML = ''; // Clear loading message
+
+                if (data.length === 0) {
+                    reviewsContainer.innerHTML = '<p class="no-reviews">No reviews yet.</p>';
+                    return;
+                }
+
+                data.forEach(review => {
+                    const reviewDiv = document.createElement('div');
+                    reviewDiv.className = 'review';
+                    reviewDiv.innerHTML = `
+                        <strong>${review.name}</strong>
+                        <p>${review.review}</p>
+                    `;
+                    reviewsContainer.appendChild(reviewDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching reviews:', error);
+                document.getElementById('reviews').innerHTML = '<p class="error-message">Failed to load reviews.</p>';
+            });
+
+        // Popup functionality
+        document.getElementById('openPopup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'flex';
+        });
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        // Close popup if the user clicks outside of the popup
+        window.onclick = function(event) {
+            const popup = document.getElementById('popup');
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+</html>
